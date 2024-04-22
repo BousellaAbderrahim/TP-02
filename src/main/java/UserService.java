@@ -1,12 +1,13 @@
 import org.example.ServiceException;
 
 public class UserService {
-    private final UtilisateurApi utilisateurApi;
+    private  UtilisateurApi utilisateurApi;
     public UserService(UtilisateurApi utilisateurApi) {
         this.utilisateurApi = utilisateurApi;
     }
-    public void creerUtilisateur(Utilisateur utilisateur) throws
-            ServiceException {
+    public void creerUtilisateur(Utilisateur utilisateur) throws ServiceException {
         utilisateurApi.creerUtilisateur(utilisateur);
     }
+
+
 }
