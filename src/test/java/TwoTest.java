@@ -13,6 +13,9 @@ public class TwoTest {
     private UtilisateurApi utilisateurApiMock;
 
     @Test
+
+
+
     public void testErreurDeValidation() throws ServiceException {
         // Création d'un nouvel utilisateur avec des données invalides
         Utilisateur utilisateur = new Utilisateur(10,"ffff", "Dupont", "jeandupont@email.com");

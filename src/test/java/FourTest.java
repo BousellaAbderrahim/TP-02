@@ -13,6 +13,8 @@ public class FourTest {
     @Mock
     private UtilisateurApi utilisateurApiMock;
 
+
+
     @Test
     public void testCreerUtilisateurArgumentCaptor() throws ServiceException {
         // Création d'un nouvel utilisateur

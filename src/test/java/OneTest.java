@@ -14,6 +14,8 @@ public class OneTest {
     @Mock
     private UtilisateurApi utilisateurApiMock;
 
+
+
     @Test
     public void testCreerUtilisateurException() throws ServiceException {
         // Création d'un nouvel utilisateur
