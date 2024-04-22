@@ -1,25 +1,28 @@
+
 import org.example.ServiceException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
-public class UserServiceTest {
+public class ThreeTest {
 
     @Mock
     private UtilisateurApi utilisateurApiMock;
 
     @Test
-    public void testCreerUtilisateur() throws ServiceException {
+    public void testCreerUtilisateurId() throws ServiceException {
         // Création d'un nouvel utilisateur
-        Utilisateur utilisateur = new Utilisateur(1,"Bousella", "Abderrahim", "Bousel_Abder@email.com");
+        Utilisateur utilisateur = new Utilisateur(123,"Jean", "Dupont", "jeandupont@email.com");
 
-        // Configuration du comportement du mock pour la méthode creerUtilisateur
-        doNothing().when(utilisateurApiMock).creerUtilisateur(utilisateur);
+        // Définition d'un ID fictif
+        int idUtilisateur = 123;
+
+        // TODO: Configuration du mock pour renvoyer l'ID
+        when(utilisateurApiMock.getUtilisateurID()).thenReturn(idUtilisateur);
 
         // Création du service avec le mock
         UserService userService = new UserService(utilisateurApiMock);
@@ -27,8 +30,7 @@ public class UserServiceTest {
         // Appel de la méthode à tester
         userService.creerUtilisateur(utilisateur);
 
-        // Vérification de l'appel à l'API
-
-        verify(utilisateurApiMock, times(1)).creerUtilisateur(utilisateur);
+        // TODO: Vérification de l'ID de l'utilisateur
+        assertEquals(idUtilisateur, utilisateur.getId());
     }
 }
