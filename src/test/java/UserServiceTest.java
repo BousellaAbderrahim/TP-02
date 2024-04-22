@@ -18,6 +18,8 @@ public class UserServiceTest {
         // Création d'un nouvel utilisateur
         Utilisateur utilisateur = new Utilisateur(1,"Bousella", "Abderrahim", "Bousel_Abder@email.com");
 
+
+
         // Configuration du comportement du mock pour la méthode creerUtilisateur
         doNothing().when(utilisateurApiMock).creerUtilisateur(utilisateur);
 
